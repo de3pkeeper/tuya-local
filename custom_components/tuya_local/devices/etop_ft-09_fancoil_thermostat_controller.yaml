@@ -13,16 +13,16 @@ primary_entity:
         - dps_val: true
           value: "on"
     - id: 2
-      type: value
-      name: target_temperature
+      type: integer
+      name: temperature
       scale: 0.1
     - id: 3
-      type: value
+      type: integer
       name: current_temperature
       scale: 0.1
     - id: 4
       type: string
-      name: mode
+      name: hvac_mode
       mapping:
         - dps_val: auto
           value: heat_cool
@@ -34,7 +34,7 @@ primary_entity:
           value: fan_only
     - id: 5
       type: string
-      name: fan_speed
+      name: fan_mode
       mapping:
         - dps_val: low
           value: low
