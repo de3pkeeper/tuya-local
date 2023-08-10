@@ -17,7 +17,7 @@ primary_entity:
       name: temperature
       mapping:
         - scale: 10
-          step: 5
+          step: 0.5
       range:
         min: 1
         max: 650
@@ -27,7 +27,7 @@ primary_entity:
       name: current_temperature
       mapping:
         - scale: 10
-          step: 5
+          step: 0.5
       range:
         min: 0
         max: 999
