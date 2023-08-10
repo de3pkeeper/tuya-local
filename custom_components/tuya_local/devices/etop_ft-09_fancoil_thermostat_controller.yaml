@@ -49,11 +49,11 @@ primary_entity:
       name: fan_mode
       mapping:
         - dps_val: low
-          value: low
+          value: 33
         - dps_val: medium
-          value: medium
+          value: 50
         - dps_val: high
-          value: high
+          value: 100
     - id: 7
       type: boolean
       name: lock
