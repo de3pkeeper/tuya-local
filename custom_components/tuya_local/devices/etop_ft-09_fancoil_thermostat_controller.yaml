@@ -1,0 +1,45 @@
+name: Etop FT-09 Fancoil Thermostat
+products:
+  - id: 9k370oraz3qkg0ga
+primary_entity:
+  entity: climate
+  dps:
+    - id: 1
+      type: boolean
+      name: switch
+      mapping:
+        - dps_val: false
+          value: "off"
+        - dps_val: true
+          value: "on"
+    - id: 2
+      type: value
+      name: target_temperature
+      scale: 0.1
+    - id: 3
+      type: value
+      name: current_temperature
+      scale: 0.1
+    - id: 4
+      type: string
+      name: mode
+      mapping:
+        - dps_val: auto
+          value: heat_cool
+        - dps_val: heat
+          value: heat
+        - dps_val: cool
+          value: cool
+        - dps_val: fan
+          value: fan_only
+    - id: 5
+      type: string
+      name: fan_speed
+      mapping:
+        - dps_val: low
+          value: low
+        - dps_val: medium
+          value: medium
+        - dps_val: high
+          value: high
+secondary_entities: []
