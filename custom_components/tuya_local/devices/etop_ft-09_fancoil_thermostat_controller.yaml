@@ -45,15 +45,15 @@ primary_entity:
         - dps_val: fan
           value: fan_only
     - id: 5
-      type: integer
+      type: string
       name: fan_mode
       mapping:
         - dps_val: low
-          value: 33
+          value: low
         - dps_val: medium
-          value: 50
+          value: medium
         - dps_val: high
-          value: 100
+          value: high
     - id: 7
       type: boolean
       name: lock
