@@ -15,11 +15,23 @@ primary_entity:
     - id: 2
       type: integer
       name: temperature
-      scale: 0.1
+      mapping:
+        - scale: 0.1
+          step: 0.5
+      range:
+        min: 1
+        max: 650
+      unit: C
     - id: 3
       type: integer
       name: current_temperature
-      scale: 0.1
+      mapping:
+        - scale: 0.1
+          step: 0.5
+      range:
+        min: 0
+        max: 999
+      unit: C
     - id: 4
       type: string
       name: hvac_mode
@@ -28,7 +40,7 @@ primary_entity:
           value: heat_cool
         - dps_val: heat
           value: heat
-        - dps_val: cool
+        - dps_val: cold
           value: cool
         - dps_val: fan
           value: fan_only
@@ -42,4 +54,19 @@ primary_entity:
           value: medium
         - dps_val: high
           value: high
-secondary_entities: []
+    - id: 7
+      type: boolean
+      name: lock
+secondary_entities:
+  - entity: lock
+    name: Child lock
+    category: config
+    dps:
+      - id: 14
+        type: boolean
+        name: lock
+        mapping:
+          - dps_val: true
+            icon: "mdi:hand-back-right-off"
+          - dps_val: false
+            icon: "mdi:hand-back-right"
