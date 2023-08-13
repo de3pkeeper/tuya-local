@@ -1,3 +1,5 @@
+# https://www.etopcontrols.com/digital-programmable-heating-and-cooling-fcu-thermostat
+# Found in PRC-made FCUs of the MECO brand --- http://www.china-meco.com/en/product-64610-175032.html
 name: Etop FT-09 Fancoil Thermostat
 products:
   - id: 9k370oraz3qkg0ga
@@ -5,13 +7,22 @@ primary_entity:
   entity: climate
   dps:
     - id: 1
+      name: hvac_mode
       type: boolean
-      name: switch
       mapping:
         - dps_val: false
           value: "off"
         - dps_val: true
-          value: "on"
+          constraint: preset_mode
+          conditions:
+            - dps_val: cold
+              value: cool
+            - dps_val: heat
+              value: heat
+            - dps_val: fan
+              value: fan_only
+            - dps_val: auto
+              value: heat_cool
     - id: 2
       type: integer
       name: temperature
@@ -33,7 +44,7 @@ primary_entity:
       unit: C
     - id: 4
       type: string
-      name: hvac_mode
+      name: preset_mode
       mapping:
         - dps_val: auto
           value: heat_cool
